@@ -19,19 +19,22 @@ public class Sede {
     private String cidade;
     private String bairro;
     private String telefone;
+    private String site;
     
 	public Sede() {
 	}
 	
-	public Sede(Long sedeId, String nomeFantasia, String estado, String cidade, String bairro, String telefone) {
+	public Sede(Long sedeId, String nomeFantasia, String estado, String cidade, String bairro, String telefone,
+			String site) {
 		this.sedeId = sedeId;
 		this.nomeFantasia = nomeFantasia;
 		this.estado = estado;
 		this.cidade = cidade;
 		this.bairro = bairro;
 		this.telefone = telefone;
+		this.site = site;
 	}
-	
+
 	public Long getSedeId() {
 		return sedeId;
 	}
@@ -68,4 +71,11 @@ public class Sede {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	public String getSite() {
+		return site;
+	}
+	public void setSite(String site) {
+		this.site = site;
+	}
+	
 }
