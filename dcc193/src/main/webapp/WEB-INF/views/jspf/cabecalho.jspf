@@ -18,7 +18,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/membros">Membros</a>
             </li>
-            <li class="nav-item"><a class="nav-link">Atividades</a>
+            <li class="nav-item"><a class="nav-link" hred="/atividades">Atividades</a>
             </li>
         </ul>
     </div>

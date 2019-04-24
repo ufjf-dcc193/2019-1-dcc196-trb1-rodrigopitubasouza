@@ -32,12 +32,20 @@ public class Sede {
 			cascade = CascadeType.ALL
 			)
 	private List<Membro> membroList;
+	@OneToMany(
+			mappedBy = "sede", 
+			targetEntity = Atividade.class, 
+			fetch = FetchType.LAZY, 
+			cascade = CascadeType.ALL
+			)
+	private List<Atividade> AtividadeList;
     
 	public Sede() {
 	}
 	
+	
 	public Sede(Long sedeId, String nomeFantasia, String estado, String cidade, String bairro, String telefone,
-			String site, List<Membro> membroList) {
+			String site, List<Membro> membroList, List<Atividade> atividadeList) {
 		super();
 		this.sedeId = sedeId;
 		this.nomeFantasia = nomeFantasia;
@@ -47,7 +55,9 @@ public class Sede {
 		this.telefone = telefone;
 		this.site = site;
 		this.membroList = membroList;
+		AtividadeList = atividadeList;
 	}
+
 
 	public Long getSedeId() {
 		return sedeId;
@@ -97,7 +107,16 @@ public class Sede {
 	public void setMembroList(List<Membro> membroList) {
 		this.membroList = membroList;
 	}
-	
+	public List<Atividade> getAtividadeList() {
+		return AtividadeList;
+	}
+
+
+	public void setAtividadeList(List<Atividade> atividadeList) {
+		AtividadeList = atividadeList;
+	}
+
+
 	@Override
 	public String toString() {
 		return this.nomeFantasia;
