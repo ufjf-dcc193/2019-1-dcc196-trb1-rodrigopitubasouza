@@ -61,10 +61,12 @@ public class SedesController {
 		return new RedirectView("/sedes");
 	}
 	
-	@GetMapping("/horas-por-sede")
+	@GetMapping("/horas-atividades")
 	public ModelAndView horasDasAtividades() {
 		List<Atividade> horas = sedeRepository.getHoras();
-	    return new ModelAndView().addObject("horas", horas);
+		ModelAndView mv = new ModelAndView().addObject("horas", horas);
+		mv.setViewName("sedes-horas");
+	    return mv;
 	}
 }
 	

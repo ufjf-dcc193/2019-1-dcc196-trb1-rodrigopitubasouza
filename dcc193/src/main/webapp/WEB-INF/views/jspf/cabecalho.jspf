@@ -20,6 +20,8 @@
             </li>
             <li class="nav-item"><a class="nav-link" href="/atividades">Atividades</a>
             </li>
+            <li class="nav-item"><a class="nav-link" href="/sedes/horas-atividades">Horas por Sede</a>
+            </li>
         </ul>
     </div>
 </nav>
