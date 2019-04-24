@@ -27,7 +27,7 @@ public class Sede {
     private String site;
 	@OneToMany(
 			mappedBy = "sede", 
-			targetEntity = Sede.class, 
+			targetEntity = Membro.class, 
 			fetch = FetchType.LAZY, 
 			cascade = CascadeType.ALL
 			)
@@ -96,5 +96,10 @@ public class Sede {
 	}
 	public void setMembroList(List<Membro> membroList) {
 		this.membroList = membroList;
+	}
+	
+	@Override
+	public String toString() {
+		return this.nomeFantasia;
 	}
 }

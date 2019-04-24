@@ -18,7 +18,7 @@ public class Membro {
     private LocalDate dataEntrada;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataSaida;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "sedeId", nullable = false)
     private Sede sede;
 
