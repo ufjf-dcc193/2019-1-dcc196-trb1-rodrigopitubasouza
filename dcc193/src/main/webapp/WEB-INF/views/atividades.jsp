@@ -42,7 +42,7 @@
                 		<td>${atividade.getHorasJuridica()}</td>
                 		<td>${atividade.getHorasFinanceira()}</td>
                 		<td>${atividade.getHorasExecutiva()}</td>
-                		<td><a>${atividade.getSede()}</a></td>
+                		<td>${atividade.getSede()}</td>
                 		<td colspan="2">
                     		<a class="btn btn-primary" href="atividades/editar/${atividade.getAtividadeId()}">Editar</a>
                     		<a class="btn btn-danger" href="atividades/excluir/${atividade.getAtividadeId()}">Excluir</a>

@@ -36,7 +36,7 @@
                 		<td>${membro.getEmail()}</td>
                 		<td>${membro.getDataEntrada()}</td>
                 		<td>${membro.getDataSaida()}</td>
-                		<td><a>${membro.getSede()}</a></td>
+                		<td>${membro.getSede()}</td>
                 		<td colspan="2">
                     		<a class="btn btn-primary" href="membros/editar/${membro.getMembroId()}">Editar</a>
                     		<a class="btn btn-danger" href="membros/excluir/${membro.getMembroId()}">Excluir</a>
