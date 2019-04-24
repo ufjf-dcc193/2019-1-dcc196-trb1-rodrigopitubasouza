@@ -1,5 +1,7 @@
 package com.ufjf.dcc193.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.ufjf.dcc193.model.Atividade;
 import com.ufjf.dcc193.model.Sede;
 import com.ufjf.dcc193.repository.SedeRepository;
 
@@ -46,7 +49,7 @@ public class SedesController {
 	@GetMapping("/excluir/{id}")
 	public RedirectView excluir(@PathVariable Long id) {
 		Sede sede = sedeRepository.getOne(id);
-		if(sede != null && CollectionUtils.isEmpty(sede.getMembroList())){
+		if(sede != null && CollectionUtils.isEmpty(sede.getMembroList()) && CollectionUtils.isEmpty(sede.getAtividadeList())){
 			sedeRepository.delete(sede);
 		}
 		return new RedirectView("/sedes");
@@ -58,5 +61,10 @@ public class SedesController {
 		return new RedirectView("/sedes");
 	}
 	
+	@GetMapping("/horas-por-sede")
+	public ModelAndView horasDasAtividades() {
+		List<Atividade> horas = sedeRepository.getHoras();
+	    return new ModelAndView().addObject("horas", horas);
+	}
 }
 	
