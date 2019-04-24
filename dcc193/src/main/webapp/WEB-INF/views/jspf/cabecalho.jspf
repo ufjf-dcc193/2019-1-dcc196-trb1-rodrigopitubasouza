@@ -8,12 +8,12 @@
     <title>Trabalho 1 DCC193</title>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <a class="navbar-brand" href="/index.html">Página Inicial</a>
+<nav class="navbar navbar-light bg-light navbar-expand-lg">
+    <a class="navbar-brand" href="/pagina-inicial">Página Inicial</a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link">Sedes</a>
+                <a class="nav-link" href="/sedes">Sedes</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link">Membros</a>
