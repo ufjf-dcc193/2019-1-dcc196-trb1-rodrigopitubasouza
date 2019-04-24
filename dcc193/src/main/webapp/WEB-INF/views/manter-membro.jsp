@@ -4,7 +4,7 @@
 <h4>Manter membro</h4>
 
 <form action="/membros/manter" method="post">
-	<input type="hidden" name="membroId" value="${membro.membroId}">
+	<input type="hidden" name="membroId" value="${membro.getMembroId()}">
     <div class="form-group">
         <label>Nome</label>
         <input required type="text" name="nome" class="form-control" value="${membro.nome}">
@@ -22,11 +22,11 @@
     <div class="row form-group">
             <div class="col-md-6">
             <label>Data de Entrada</label>
-            <input required type="date" name="estado" class="form-control" value="${membro.dataEntrada}">
+            <input required type="date" name="dataEntrada" class="form-control" value="${membro.dataEntrada}">
         </div>
         <div class="col-md-6">
             <label>Data de Saída</label>
-            <input required type="date" name="site" class="form-control" value="${membro.dataSaida}">
+            <input required type="date" name="dataSaida" class="form-control" value="${membro.dataSaida}">
         </div>
     </div>
     <div class="form-group">

@@ -38,8 +38,8 @@
                 		<td>${membro.getDataSaida()}</td>
                 		<td><a>${membro.getSede()}</a></td>
                 		<td colspan="2">
-                    		<a class="btn btn-primary" href="membros/editar/${membro.getId()}">Editar</a>
-                    		<a class="btn btn-danger" href="membros/excluir/${membro.getId()}">Excluir</a>
+                    		<a class="btn btn-primary" href="membros/editar/${membro.getMembroId()}">Editar</a>
+                    		<a class="btn btn-danger" href="membros/excluir/${membro.getMembroId()}">Excluir</a>
                 		</td>
             		</tr>
             	</c:forEach>

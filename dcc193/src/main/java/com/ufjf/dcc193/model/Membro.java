@@ -24,17 +24,19 @@ public class Membro {
 
     public Membro() {
     }
+    
+    public Membro(Long membroId, String nome, String funcao, String email, LocalDate dataEntrada, LocalDate dataSaida,
+			Sede sede) {
+		this.membroId = membroId;
+		this.nome = nome;
+		this.funcao = funcao;
+		this.email = email;
+		this.dataEntrada = dataEntrada;
+		this.dataSaida = dataSaida;
+		this.sede = sede;
+	}
 
-    public Membro(String nome, String funcao, String email, LocalDate dataEntrada, LocalDate dataSaida, Sede sede) {
-        this.nome = nome;
-        this.funcao = funcao;
-        this.email = email;
-        this.dataEntrada = dataEntrada;
-        this.dataSaida = dataSaida;
-        this.sede = sede;
-    }
-
-    public Sede getSede() {
+	public Sede getSede() {
         return sede;
     }
 
@@ -50,11 +52,11 @@ public class Membro {
         this.nome = nome;
     }
 
-    public Long getId() {
+    public Long getMembroId() {
         return membroId;
     }
 
-    public void setId(Long membroId) {
+    public void setMembroId(Long membroId) {
         this.membroId = membroId;
     }
 
