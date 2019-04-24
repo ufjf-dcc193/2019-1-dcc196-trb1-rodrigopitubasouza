@@ -16,7 +16,7 @@ public class Atividade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long atividadeId;
     
     private String titulo;
     private String descricao;
@@ -26,10 +26,10 @@ public class Atividade {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataFim;
-    private Integer horasAssistencial;
-    private Integer horasJuridica;
-    private Integer horasFinanceira;
-    private Integer horasExecutiva;
+    private long horasAssistencial;
+    private long horasJuridica;
+    private long horasFinanceira;
+    private long horasExecutiva;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "sedeId", nullable = false)
@@ -39,25 +39,37 @@ public class Atividade {
 
     }
 
-    public Atividade(String titulo, String descricao, LocalDate dataInicio, LocalDate dataFim, Integer assistencial,
-            Integer juridica, Integer financeira, Integer executiva, Sede sede) {
-        this.titulo = titulo;
-        this.descricao = descricao;
-        this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
-        this.horasAssistencial = assistencial;
-        this.horasJuridica = juridica;
-        this.horasFinanceira = financeira;
-        this.horasExecutiva = executiva;
-        this.sede = sede;
-    }
-
-	public Long getId() {
-		return id;
+	public Atividade(Long atividadeId, String titulo, String descricao, LocalDate dataInicio, LocalDate dataFim,
+			long horasAssistencial, long horasJuridica, long horasFinanceira, long horasExecutiva,
+			Sede sede) {
+		super();
+		this.atividadeId = atividadeId;
+		this.titulo = titulo;
+		this.descricao = descricao;
+		this.dataInicio = dataInicio;
+		this.dataFim = dataFim;
+		this.horasAssistencial = horasAssistencial;
+		this.horasJuridica = horasJuridica;
+		this.horasFinanceira = horasFinanceira;
+		this.horasExecutiva = horasExecutiva;
+		this.sede = sede;
+	}
+	
+	
+	public Atividade(Sede sede, long horasAssistencial, long horasJuridica, long horasFinanceira, long horasExecutiva) {
+		this.horasAssistencial = horasAssistencial;
+		this.horasJuridica = horasJuridica;
+		this.horasFinanceira = horasFinanceira;
+		this.horasExecutiva = horasExecutiva;
+		this.sede = sede;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public Long getAtividadeId() {
+		return atividadeId;
+	}
+
+	public void setAtividadeId(Long id) {
+		this.atividadeId = id;
 	}
 
 	public String getTitulo() {
@@ -92,35 +104,35 @@ public class Atividade {
 		this.dataFim = dataFim;
 	}
 
-	public Integer gethorasAssistencial() {
+	public long getHorasAssistencial() {
 		return horasAssistencial;
 	}
 
-	public void sethorasAssistencial(Integer horasAssistencial) {
+	public void setHorasAssistencial(long horasAssistencial) {
 		this.horasAssistencial = horasAssistencial;
 	}
 
-	public Integer gethorasJuridica() {
+	public long getHorasJuridica() {
 		return horasJuridica;
 	}
 
-	public void sethorasJuridica(Integer horasJuridica) {
+	public void setHorasJuridica(long horasJuridica) {
 		this.horasJuridica = horasJuridica;
 	}
 
-	public Integer gethorasFinanceira() {
+	public long getHorasFinanceira() {
 		return horasFinanceira;
 	}
 
-	public void sethorasFinanceira(Integer horasFinanceira) {
+	public void setHorasFinanceira(long horasFinanceira) {
 		this.horasFinanceira = horasFinanceira;
 	}
 
-	public Integer gethorasExecutiva() {
+	public long getHorasExecutiva() {
 		return horasExecutiva;
 	}
 
-	public void sethorasExecutiva(Integer horasExecutiva) {
+	public void setHorasExecutiva(long horasExecutiva) {
 		this.horasExecutiva = horasExecutiva;
 	}
 
