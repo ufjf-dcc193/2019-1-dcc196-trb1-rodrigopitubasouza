@@ -2,6 +2,7 @@ package com.ufjf.dcc193.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,7 +46,9 @@ public class SedesController {
 	@GetMapping("/excluir/{id}")
 	public RedirectView excluir(@PathVariable Long id) {
 		Sede sede = sedeRepository.getOne(id);
-		sedeRepository.delete(sede);
+		if(sede != null && CollectionUtils.isEmpty(sede.getMembroList())){
+			sedeRepository.delete(sede);
+		}
 		return new RedirectView("/sedes");
 	}
 	

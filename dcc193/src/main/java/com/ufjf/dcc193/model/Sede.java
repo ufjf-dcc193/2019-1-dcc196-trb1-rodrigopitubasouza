@@ -1,9 +1,14 @@
 package com.ufjf.dcc193.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,12 +25,20 @@ public class Sede {
     private String bairro;
     private String telefone;
     private String site;
+	@OneToMany(
+			mappedBy = "sede", 
+			targetEntity = Sede.class, 
+			fetch = FetchType.LAZY, 
+			cascade = CascadeType.ALL
+			)
+	private List<Membro> membroList;
     
 	public Sede() {
 	}
 	
 	public Sede(Long sedeId, String nomeFantasia, String estado, String cidade, String bairro, String telefone,
-			String site) {
+			String site, List<Membro> membroList) {
+		super();
 		this.sedeId = sedeId;
 		this.nomeFantasia = nomeFantasia;
 		this.estado = estado;
@@ -33,6 +46,7 @@ public class Sede {
 		this.bairro = bairro;
 		this.telefone = telefone;
 		this.site = site;
+		this.membroList = membroList;
 	}
 
 	public Long getSedeId() {
@@ -77,5 +91,10 @@ public class Sede {
 	public void setSite(String site) {
 		this.site = site;
 	}
-	
+	public List<Membro> getMembroList() {
+		return membroList;
+	}
+	public void setMembroList(List<Membro> membroList) {
+		this.membroList = membroList;
+	}
 }
